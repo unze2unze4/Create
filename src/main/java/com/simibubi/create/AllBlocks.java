@@ -158,6 +158,7 @@ public enum AllBlocks implements NonNullSupplier<Block> {
 	ANDESITE_CASING(() -> new CasingBlock(Properties.from(Blocks.ANDESITE))),
 	COPPER_CASING(() -> new CasingBlock(Properties.from(Blocks.ANDESITE))),
 	BRASS_CASING(() -> new CasingBlock(Properties.from(Blocks.ANDESITE))),
+	LAPIS_CASING(() -> new CasingBlock(Properties.from(Blocks.ANDESITE))),
 
 	MECHANICAL_CRAFTER(MechanicalCrafterBlock::new),
 	SEQUENCED_GEARSHIFT(SequencedGearshiftBlock::new),

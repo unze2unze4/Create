@@ -30,7 +30,8 @@ public class AllSpriteShifts {
 		FRAMED_GLASS = getCT(OMNIDIRECTIONAL, "palettes/framed_glass", "palettes/framed_glass"),
 		HORIZONTAL_FRAMED_GLASS = getCT(HORIZONTAL, "palettes/framed_glass", "palettes/horizontal_framed_glass"),
 		VERTICAL_FRAMED_GLASS = getCT(VERTICAL, "palettes/framed_glass", "palettes/vertical_framed_glass"),
-		ORNATE_IRON_WINDOW = vertical("palettes/ornate_iron_window");
+		ORNATE_IRON_WINDOW = vertical("palettes/ornate_iron_window"),
+		ORNATE_GOLD_WINDOW = vertical("palettes/ornate_gold_window");
 
 	public static final CTSpriteShiftEntry 
 		CRAFTER_FRONT = getCT(CTType.OMNIDIRECTIONAL, "crafter_top", "brass_casing"),

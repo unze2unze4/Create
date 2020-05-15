@@ -61,6 +61,10 @@ public class AllPaletteBlocks {
 		JUNGLE_WINDOW = woodenWindowBlock(WoodType.JUNGLE), 
 		ACACIA_WINDOW = woodenWindowBlock(WoodType.ACACIA),
 		DARK_OAK_WINDOW = woodenWindowBlock(WoodType.DARK_OAK), 
+
+		ORNATE_GOLD_WINDOW =
+			customWindowBlock("ornate_gold_window", AllSpriteShifts.ORNATE_GOLD_WINDOW, () -> RenderType::getCutoutMipped),
+
 		ORNATE_IRON_WINDOW =
 			customWindowBlock("ornate_iron_window", AllSpriteShifts.ORNATE_IRON_WINDOW, () -> RenderType::getCutoutMipped);
 
@@ -71,6 +75,8 @@ public class AllPaletteBlocks {
 		JUNGLE_WINDOW_PANE = woodenWindowPane(WoodType.JUNGLE), 
 		ACACIA_WINDOW_PANE = woodenWindowPane(WoodType.ACACIA),
 		DARK_OAK_WINDOW_PANE = woodenWindowPane(WoodType.DARK_OAK), 
+		ORNATE_GOLD_WINDOW_PANE =
+			customWindowPane("ornate_gold_window", AllSpriteShifts.ORNATE_GOLD_WINDOW, () -> RenderType::getCutoutMipped),
 		ORNATE_IRON_WINDOW_PANE =
 			customWindowPane("ornate_iron_window", AllSpriteShifts.ORNATE_IRON_WINDOW, () -> RenderType::getCutoutMipped);
 

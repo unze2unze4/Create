@@ -157,6 +157,7 @@
 	"block.create.jungle_glass": "Jungle Window",
 	"block.create.dark_oak_glass": "Dark Oak Window",
 	"block.create.acacia_glass": "Acacia Window",
+	"block.create.gold_glass": "Ornate Gold Window",
 	"block.create.iron_glass": "Ornate Iron Window",
 	
 	"block.create.tiled_glass_pane": "Tiled Glass Pane",
@@ -169,6 +170,7 @@
 	"block.create.jungle_glass_pane": "Jungle Window Pane",
 	"block.create.dark_oak_glass_pane": "Dark Oak Window Pane",
 	"block.create.acacia_glass_pane": "Acacia Window Pane",
+	"block.create.gold_glass_pane": "Ornate Gold Window Pane",
 	"block.create.iron_glass_pane": "Ornate Iron Window Pane",
 
 	"block.create.window_in_a_block": "Block with Glass Pane",

@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "side": "create:block/palettes/ornate_gold_window",
+    "end": "create:block/palettes/ornate_gold_window_end"
+  }
+}

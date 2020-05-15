@@ -9,7 +9,6 @@ import com.simibubi.create.foundation.block.IHaveColorHandler;
 import com.simibubi.create.foundation.block.ProperStairsBlock;
 import com.simibubi.create.foundation.utility.Lang;
 import com.simibubi.create.foundation.utility.data.ITaggable;
-import com.simibubi.create.foundation.world.OxidizingBlock;
 import com.simibubi.create.modules.Sections;
 import com.simibubi.create.modules.contraptions.CasingBlock;
 import com.simibubi.create.modules.contraptions.components.actors.DrillBlock;
@@ -96,9 +95,9 @@ import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.Tag;
+import net.minecraft.world.storage.loot.LootTable;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.common.ToolType;
 
 public enum AllBlocks implements NonNullSupplier<Block> {
 
@@ -193,19 +192,19 @@ public enum AllBlocks implements NonNullSupplier<Block> {
 
 	_3_(Sections.MATERIALS),
 
-	COPPER_ORE(() -> new OxidizingBlock(Properties.from(Blocks.IRON_ORE), 1), ITaggable.create()
-			.withForgeTags("ores/copper")),
-	ZINC_ORE(() -> new Block(Properties.from(Blocks.GOLD_ORE)
-			.harvestLevel(2)
-			.harvestTool(ToolType.PICKAXE)), ITaggable.create()
-					.withForgeTags("ores/zinc")),
-	COPPER_BLOCK(() -> new OxidizingBlock(Properties.from(Blocks.IRON_BLOCK), 1 / 32f), ITaggable.create()
-			.withForgeTags("storage_blocks/copper")),
-	COPPER_SHINGLES(() -> new OxidizingBlock(Properties.from(Blocks.IRON_BLOCK), 1 / 32f)),
-	ZINC_BLOCK(() -> new Block(Properties.from(Blocks.IRON_BLOCK)), ITaggable.create()
-			.withForgeTags("storage_blocks/zinc")),
-	BRASS_BLOCK(() -> new Block(Properties.from(Blocks.IRON_BLOCK)), ITaggable.create()
-			.withForgeTags("storage_blocks/brass")),
+//	COPPER_ORE(() -> new OxidizingBlock(Properties.from(Blocks.IRON_ORE), 1), ITaggable.create()
+//			.withForgeTags("ores/copper")),
+//	ZINC_ORE(() -> new Block(Properties.from(Blocks.GOLD_ORE)
+//			.harvestLevel(2)
+//			.harvestTool(ToolType.PICKAXE)), ITaggable.create()
+//					.withForgeTags("ores/zinc")),
+//	COPPER_BLOCK(() -> new OxidizingBlock(Properties.from(Blocks.IRON_BLOCK), 1 / 32f), ITaggable.create()
+//			.withForgeTags("storage_blocks/copper")),
+//	COPPER_SHINGLES(() -> new OxidizingBlock(Properties.from(Blocks.IRON_BLOCK), 1 / 32f)),
+//	ZINC_BLOCK(() -> new Block(Properties.from(Blocks.IRON_BLOCK)), ITaggable.create()
+//			.withForgeTags("storage_blocks/zinc")),
+//	BRASS_BLOCK(() -> new Block(Properties.from(Blocks.IRON_BLOCK)), ITaggable.create()
+//			.withForgeTags("storage_blocks/brass")),
 
 	_4_(Sections.CURIOSITIES),
 
@@ -357,8 +356,7 @@ public enum AllBlocks implements NonNullSupplier<Block> {
 		this.block = Create.registrate()
 				.block(Lang.asId(name()), $ -> block.get()) // TODO take properties as input
 				.blockstate(NonNullBiConsumer.noop()) // TODO
-				.defaultLoot()
-//				.loot(NonNullBiConsumer.noop()) // TODO
+				.transform(b -> ArrayUtils.contains(comesWith, ComesWith.NO_BLOCKITEM) ? b.loot(NonNullBiConsumer.noop()) : b) // TODO
 				.setData(ProviderType.LANG, NonNullBiConsumer.noop()) // TODO
 				.transform(applyTags(tags))
 				.transform(b -> registerItemBlock(b, customItemCreator, comesWith))
@@ -464,7 +462,7 @@ public enum AllBlocks implements NonNullSupplier<Block> {
 		for (AllBlocks block : values())
 			if (block.get() instanceof IHaveColorHandler)
 				blockColors.register(((IHaveColorHandler) block.get()).getColorHandler(), block.get());
-		for (RegistryEntry<Block> registryEntry : Create.palettesRegistrate()
+		for (RegistryEntry<Block> registryEntry : Create.registrate()
 				.getAll(Block.class)) {
 			Block blockEntry = registryEntry.get();
 			if (blockEntry instanceof IHaveColorHandler) {

@@ -3,13 +3,11 @@ package com.simibubi.create.modules.schematics.client.tools;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.simibubi.create.AllKeys;
-import com.simibubi.create.AllSpecialTextures;
 import com.simibubi.create.modules.schematics.client.SchematicTransformation;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.IRenderTypeBuffer;
 import net.minecraft.client.renderer.RenderHelper;
-import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTUtil;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -65,9 +63,9 @@ public class DeployTool extends PlacementToolBase {
 		RenderSystem.translated(-rotationOffset.x, 0, -rotationOffset.z);
 		RenderSystem.translated(-xOrigin, 0, -zOrigin);
 
-		schematicHandler.getOutline().setTextures(AllSpecialTextures.CHECKERED, null);
-		schematicHandler.getOutline().render(Tessellator.getInstance().getBuffer());
-		schematicHandler.getOutline().setTextures(null, null);
+//		schematicHandler.getOutline().setTextures(AllSpecialTextures.CHECKERED, null);
+//		schematicHandler.getOutline().render(Tessellator.getInstance().getBuffer());TODO
+//		schematicHandler.getOutline().setTextures(null, null);
 		RenderSystem.popMatrix();
 	}
 

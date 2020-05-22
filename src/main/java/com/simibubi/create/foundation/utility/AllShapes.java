@@ -1,6 +1,5 @@
 package com.simibubi.create.foundation.utility;
 
-import static net.minecraft.util.Direction.EAST;
 import static net.minecraft.util.Direction.SOUTH;
 import static net.minecraft.util.Direction.UP;
 
@@ -24,7 +23,7 @@ public class AllShapes {
 	CASING_14PX = shape(0, 0, 0, 16, 14, 16).forDirectional(),
 			CASING_12PX = shape(0, 0, 0, 16, 12, 16).forDirectional(),
 			CASING_11PX = shape(0, 0, 0, 16, 11, 16).forDirectional(),
-			MOTOR_BLOCK = shape(0, 3, 3, 16, 13, 13).forHorizontal(EAST),
+			MOTOR_BLOCK = shape(3, 0, 3, 13, 14, 13).forDirectional(),
 			FOUR_VOXEL_POLE = shape(6, 0, 6, 10, 16, 10).forAxis(),
 			SIX_VOXEL_POLE = shape(5, 0, 5, 11, 16, 11).forAxis(),
 			BELT_FUNNEL = shape(3, -4, 11, 13, 8, 17).forHorizontal(SOUTH),
@@ -58,6 +57,7 @@ public class AllShapes {
 			SCHEMATICANNON_SHAPE = shape(1, 0, 1, 15, 8, 15).add(0.5, 8, 0.5, 15.5, 11, 15.5).build(),
 			PULLEY_MAGNET = shape(3, 0, 3, 13, 2, 13).add(FOUR_VOXEL_POLE.get(UP)).build(),
 			MILLSTONE = shape(0, 0, 0, 16, 6, 16).add(2, 6, 2, 14, 13, 14).add(3, 13, 3, 13, 16, 13).build(),
+			CUCKOO_CLOCK = shape(1, 0, 1, 15, 19, 15).build(),
 			GAUGE_SHAPE_UP = shape(1, 0, 0, 15, 2, 16).add(2, 2, 1, 14, 14, 15).build()
 
 	;

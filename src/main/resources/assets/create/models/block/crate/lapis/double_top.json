@@ -1,8 +1,0 @@
-{
-	"parent": "create:block/crate/double_top",
-	"textures": {
-		"side": "create:block/crate_lapis_side",
-		"crate": "create:block/crate_lapis",
-		"casing": "create:block/lapis_casing"
-	}
-}

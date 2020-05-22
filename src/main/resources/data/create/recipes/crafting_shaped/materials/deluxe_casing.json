@@ -1,0 +1,23 @@
+{
+    "type": "crafting_shaped",
+        "pattern": [
+            "AAA",
+            "LSL",
+            "AAA"
+        ],
+        "key": {
+            "A": {
+                "tag": "minecraft:planks"
+            },
+            "S": {
+                "tag": "minecraft:logs"
+            },
+            "L": {
+                "item": "create:lapis_plate"
+            }
+        },
+    "result": {
+        "item": "create:deluxe_casing",
+        "count": 4
+    }
+}

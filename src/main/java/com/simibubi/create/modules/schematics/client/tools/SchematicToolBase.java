@@ -5,13 +5,10 @@ import java.util.List;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
-import com.simibubi.create.AllKeys;
-import com.simibubi.create.AllSpecialTextures;
 import com.simibubi.create.CreateClient;
 import com.simibubi.create.foundation.utility.RaycastHelper;
 import com.simibubi.create.foundation.utility.RaycastHelper.PredicateTraceResult;
 import com.simibubi.create.foundation.utility.VecHelper;
-import com.simibubi.create.foundation.utility.outliner.AABBOutline;
 import com.simibubi.create.modules.schematics.client.SchematicHandler;
 import com.simibubi.create.modules.schematics.client.SchematicTransformation;
 
@@ -19,7 +16,6 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.player.ClientPlayerEntity;
 import net.minecraft.client.renderer.IRenderTypeBuffer;
 import net.minecraft.client.renderer.RenderHelper;
-import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -119,19 +115,19 @@ public abstract class SchematicToolBase implements ISchematicTool {
 		if (!schematicHandler.isDeployed())
 			return;
 
-		AABBOutline outline = schematicHandler.getOutline();
+//		AABBOutline outline = schematicHandler.getOutline();
 		if (renderSelectedFace) {
-			schematicHandler.getOutline().setTextures(null,
-					AllKeys.ctrlDown() ? AllSpecialTextures.HIGHLIGHT_CHECKERED : AllSpecialTextures.CHECKERED);
-			outline.highlightFace(selectedFace);
+//			schematicHandler.getOutline().setTextures(null,
+//					AllKeys.ctrlDown() ? AllSpecialTextures.HIGHLIGHT_CHECKERED : AllSpecialTextures.CHECKERED);
+//			outline.highlightFace(selectedFace);
 		}
 
 		RenderHelper.disableStandardItemLighting();
 		RenderSystem.pushMatrix();
 		RenderSystem.enableBlend();
-		outline.render(Tessellator.getInstance().getBuffer());
+//		outline.render(Tessellator.getInstance().getBuffer());TODO
 		RenderSystem.popMatrix();
-		outline.setTextures(null, null);
+//		outline.setTextures(null, null);
 
 	}
 

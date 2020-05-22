@@ -10,6 +10,7 @@ public enum AllSpecialTextures {
 
 	BLANK("blank.png"),
 	CHECKERED("checkerboard.png"),
+	THIN_CHECKERED("thin_checkerboard.png"),
 	HIGHLIGHT_CHECKERED("highlighted_checkerboard.png"),
 	SELECTION("selection.png"),
 	
@@ -24,6 +25,10 @@ public enum AllSpecialTextures {
 
 	public void bind() {
 		Minecraft.getInstance().getTextureManager().bindTexture(location);
+	}
+	
+	public ResourceLocation getLocation() {
+		return location;
 	}
 
 }

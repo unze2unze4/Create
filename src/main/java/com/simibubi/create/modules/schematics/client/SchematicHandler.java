@@ -11,7 +11,6 @@ import com.simibubi.create.AllPackets;
 import com.simibubi.create.foundation.gui.ToolSelectionScreen;
 import com.simibubi.create.foundation.packet.NbtPacket;
 import com.simibubi.create.foundation.utility.TessellatorHelper;
-import com.simibubi.create.foundation.utility.outliner.AABBOutline;
 import com.simibubi.create.modules.schematics.SchematicWorld;
 import com.simibubi.create.modules.schematics.client.tools.Tools;
 import com.simibubi.create.modules.schematics.item.SchematicItem;
@@ -34,8 +33,7 @@ public class SchematicHandler {
 
 	private String displayedSchematic;
 	private SchematicTransformation transformation;
-	private AxisAlignedBB bounds; // local space
-	private AABBOutline outline;
+	private AxisAlignedBB bounds; 
 	private boolean deployed;
 	private boolean active;
 	private Tools currentTool;
@@ -247,8 +245,8 @@ public class SchematicHandler {
 		BlockPos size = NBTUtil.readBlockPos(tag.getCompound("Bounds"));
 
 		bounds = new AxisAlignedBB(BlockPos.ZERO, size);
-		outline = new AABBOutline(bounds);
-		outline.disableCull = true;
+//		outline = new AABBOutline(bounds);
+//		outline.disableCull = true;
 		transformation.init(anchor, settings, bounds);
 	}
 
@@ -273,10 +271,6 @@ public class SchematicHandler {
 		renderer.setActive(false);
 		active = false;
 		markDirty();
-	}
-
-	public AABBOutline getOutline() {
-		return outline;
 	}
 
 	public boolean isActive() {

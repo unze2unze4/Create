@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.function.Function;
 
 import com.simibubi.create.AllBlocks;
+import com.simibubi.create.AllBlocksNew;
 import com.simibubi.create.foundation.utility.ServerSpeedProvider;
 import com.simibubi.create.modules.contraptions.relays.belt.AllBeltAttachments.BeltAttachmentState;
 import com.simibubi.create.modules.contraptions.relays.belt.BeltBlock;
@@ -221,8 +222,8 @@ public class BeltInventory {
 				BlockState state = world.getBlockState(nextPosition);
 
 				// next block is a basin or a saw
-				if (AllBlocks.BASIN.typeOf(state) || AllBlocks.SAW.typeOf(state)
-						|| AllBlocks.CRUSHING_WHEEL_CONTROLLER.typeOf(state)) {
+				if (AllBlocksNew.BASIN.has(state) || AllBlocksNew.SAW.has(state)
+						|| AllBlocksNew.CRUSHING_WHEEL_CONTROLLER.has(state)) {
 					TileEntity te = world.getTileEntity(nextPosition);
 					if (te != null) {
 						LazyOptional<IItemHandler> optional =
@@ -248,7 +249,7 @@ public class BeltInventory {
 				}
 
 				// next block is not a belt
-				if (!AllBlocks.BELT.typeOf(state) || state.get(BeltBlock.SLOPE) == Slope.VERTICAL) {
+				if (!AllBlocksNew.BELT.has(state) || state.get(BeltBlock.SLOPE) == Slope.VERTICAL) {
 					if (!Block.hasSolidSide(state, world, nextPosition, movementFacing.getOpposite())) {
 						eject(current);
 						iterator.remove();

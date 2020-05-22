@@ -10,51 +10,8 @@ import com.simibubi.create.foundation.block.ProperStairsBlock;
 import com.simibubi.create.foundation.utility.Lang;
 import com.simibubi.create.foundation.utility.data.ITaggable;
 import com.simibubi.create.modules.Sections;
-import com.simibubi.create.modules.contraptions.CasingBlock;
-import com.simibubi.create.modules.contraptions.components.actors.DrillBlock;
-import com.simibubi.create.modules.contraptions.components.actors.HarvesterBlock;
-import com.simibubi.create.modules.contraptions.components.actors.PloughBlock;
-import com.simibubi.create.modules.contraptions.components.actors.PortableStorageInterfaceBlock;
-import com.simibubi.create.modules.contraptions.components.clock.CuckooClockBlock;
-import com.simibubi.create.modules.contraptions.components.contraptions.bearing.ClockworkBearingBlock;
-import com.simibubi.create.modules.contraptions.components.contraptions.bearing.MechanicalBearingBlock;
-import com.simibubi.create.modules.contraptions.components.contraptions.chassis.LinearChassisBlock;
-import com.simibubi.create.modules.contraptions.components.contraptions.chassis.RadialChassisBlock;
-import com.simibubi.create.modules.contraptions.components.contraptions.mounted.CartAssemblerBlock;
-import com.simibubi.create.modules.contraptions.components.contraptions.mounted.CartAssemblerBlock.MinecartAnchorBlock;
-import com.simibubi.create.modules.contraptions.components.contraptions.piston.MechanicalPistonBlock;
-import com.simibubi.create.modules.contraptions.components.contraptions.piston.MechanicalPistonHeadBlock;
-import com.simibubi.create.modules.contraptions.components.contraptions.piston.PistonPoleBlock;
-import com.simibubi.create.modules.contraptions.components.contraptions.pulley.PulleyBlock;
-import com.simibubi.create.modules.contraptions.components.crafter.MechanicalCrafterBlock;
-import com.simibubi.create.modules.contraptions.components.crank.HandCrankBlock;
-import com.simibubi.create.modules.contraptions.components.crusher.CrushingWheelBlock;
-import com.simibubi.create.modules.contraptions.components.crusher.CrushingWheelControllerBlock;
-import com.simibubi.create.modules.contraptions.components.deployer.DeployerBlock;
-import com.simibubi.create.modules.contraptions.components.fan.EncasedFanBlock;
-import com.simibubi.create.modules.contraptions.components.fan.NozzleBlock;
-import com.simibubi.create.modules.contraptions.components.flywheel.FlywheelBlock;
-import com.simibubi.create.modules.contraptions.components.flywheel.engine.FurnaceEngineBlock;
-import com.simibubi.create.modules.contraptions.components.millstone.MillstoneBlock;
-import com.simibubi.create.modules.contraptions.components.mixer.BasinOperatorBlockItem;
-import com.simibubi.create.modules.contraptions.components.mixer.MechanicalMixerBlock;
-import com.simibubi.create.modules.contraptions.components.motor.MotorBlock;
-import com.simibubi.create.modules.contraptions.components.press.MechanicalPressBlock;
-import com.simibubi.create.modules.contraptions.components.saw.SawBlock;
-import com.simibubi.create.modules.contraptions.components.turntable.TurntableBlock;
-import com.simibubi.create.modules.contraptions.components.waterwheel.WaterWheelBlock;
-import com.simibubi.create.modules.contraptions.processing.BasinBlock;
 import com.simibubi.create.modules.contraptions.redstone.AnalogLeverBlock;
 import com.simibubi.create.modules.contraptions.redstone.ContactBlock;
-import com.simibubi.create.modules.contraptions.relays.advanced.SpeedControllerBlock;
-import com.simibubi.create.modules.contraptions.relays.advanced.sequencer.SequencedGearshiftBlock;
-import com.simibubi.create.modules.contraptions.relays.belt.BeltBlock;
-import com.simibubi.create.modules.contraptions.relays.encased.AdjustablePulleyBlock;
-import com.simibubi.create.modules.contraptions.relays.encased.EncasedBeltBlock;
-import com.simibubi.create.modules.contraptions.relays.gauge.GaugeBlock;
-import com.simibubi.create.modules.curiosities.symmetry.block.CrossPlaneSymmetryBlock;
-import com.simibubi.create.modules.curiosities.symmetry.block.PlaneSymmetryBlock;
-import com.simibubi.create.modules.curiosities.symmetry.block.TriplePlaneSymmetryBlock;
 import com.simibubi.create.modules.logistics.block.RedstoneLinkBlock;
 import com.simibubi.create.modules.logistics.block.StockswitchBlock;
 import com.simibubi.create.modules.logistics.block.belts.observer.BeltObserverBlock;
@@ -95,7 +52,6 @@ import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.Tag;
-import net.minecraft.world.storage.loot.LootTable;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
@@ -111,60 +67,58 @@ public enum AllBlocks implements NonNullSupplier<Block> {
 //	CLUTCH(ClutchBlock::new),
 //	GEARSHIFT(GearshiftBlock::new),
 
-	ENCASED_BELT(EncasedBeltBlock::new),
-	ADJUSTABLE_PULLEY(AdjustablePulleyBlock::new),
-	BELT(BeltBlock::new, ComesWith.NO_BLOCKITEM),
-	CREATIVE_MOTOR(MotorBlock::new),
-	WATER_WHEEL(WaterWheelBlock::new),
-	ENCASED_FAN(EncasedFanBlock::new),
-	NOZZLE(NozzleBlock::new),
-	TURNTABLE(TurntableBlock::new),
-	HAND_CRANK(HandCrankBlock::new),
-	CUCKOO_CLOCK(() -> new CuckooClockBlock(false)),
-	MYSTERIOUS_CUCKOO_CLOCK(() -> new CuckooClockBlock(true)),
+//	ENCASED_BELT(EncasedBeltBlock::new),
+//	ADJUSTABLE_PULLEY(AdjustablePulleyBlock::new),
+//	BELT(BeltBlock::new, ComesWith.NO_BLOCKITEM),
+//	CREATIVE_MOTOR(MotorBlock::new),
+//	WATER_WHEEL(WaterWheelBlock::new),
+//	ENCASED_FAN(EncasedFanBlock::new),
+//	NOZZLE(NozzleBlock::new),
+//	TURNTABLE(TurntableBlock::new),
+//	HAND_CRANK(HandCrankBlock::new),
+//	CUCKOO_CLOCK(() -> new CuckooClockBlock(false)),
+//	MYSTERIOUS_CUCKOO_CLOCK(() -> new CuckooClockBlock(true)),
 
-	MILLSTONE(MillstoneBlock::new),
-	CRUSHING_WHEEL(CrushingWheelBlock::new),
-	CRUSHING_WHEEL_CONTROLLER(CrushingWheelControllerBlock::new, ComesWith.NO_BLOCKITEM),
-	MECHANICAL_PRESS(MechanicalPressBlock::new, BasinOperatorBlockItem::new),
-	MECHANICAL_MIXER(MechanicalMixerBlock::new, BasinOperatorBlockItem::new),
-	BASIN(BasinBlock::new),
-	SPEED_GAUGE(() -> new GaugeBlock(GaugeBlock.Type.SPEED)),
-	STRESS_GAUGE(() -> new GaugeBlock(GaugeBlock.Type.STRESS)),
+//	MILLSTONE(MillstoneBlock::new),
+//	CRUSHING_WHEEL(CrushingWheelBlock::new),
+//	CRUSHING_WHEEL_CONTROLLER(CrushingWheelControllerBlock::new, ComesWith.NO_BLOCKITEM),
+//	MECHANICAL_PRESS(MechanicalPressBlock::new, BasinOperatorBlockItem::new),
+//	MECHANICAL_MIXER(MechanicalMixerBlock::new, BasinOperatorBlockItem::new),
+//	BASIN(BasinBlock::new),
+//	SPEED_GAUGE(() -> new GaugeBlock(GaugeBlock.Type.SPEED)),
+//	STRESS_GAUGE(() -> new GaugeBlock(GaugeBlock.Type.STRESS)),
 
-	MECHANICAL_PISTON(() -> new MechanicalPistonBlock(false)),
-	STICKY_MECHANICAL_PISTON(() -> new MechanicalPistonBlock(true)),
-	MECHANICAL_PISTON_HEAD(MechanicalPistonHeadBlock::new, ComesWith.NO_BLOCKITEM),
-	PISTON_POLE(PistonPoleBlock::new),
-	MECHANICAL_BEARING(MechanicalBearingBlock::new),
-	CLOCKWORK_BEARING(ClockworkBearingBlock::new),
-	ROPE_PULLEY(PulleyBlock::new),
-	ROPE(PulleyBlock.RopeBlock::new, ComesWith.NO_BLOCKITEM),
-	PULLEY_MAGNET(PulleyBlock.MagnetBlock::new, ComesWith.NO_BLOCKITEM),
-	CART_ASSEMBLER(CartAssemblerBlock::new, ITaggable.create()
-			.withVanillaTags(ITaggable.BLOCK, "rails")),
-	MINECART_ANCHOR(MinecartAnchorBlock::new, ComesWith.NO_BLOCKITEM),
-	TRANSLATION_CHASSIS(LinearChassisBlock::new),
-	TRANSLATION_CHASSIS_SECONDARY(LinearChassisBlock::new),
-	ROTATION_CHASSIS(RadialChassisBlock::new),
-	DRILL(DrillBlock::new),
-	SAW(SawBlock::new),
-	DEPLOYER(DeployerBlock::new),
-	PORTABLE_STORAGE_INTERFACE(PortableStorageInterfaceBlock::new),
-	HARVESTER(HarvesterBlock::new),
-	PLOUGH(PloughBlock::new),
-	ANALOG_LEVER(AnalogLeverBlock::new),
+//	MECHANICAL_PISTON(() -> new MechanicalPistonBlock(false)),
+//	STICKY_MECHANICAL_PISTON(() -> new MechanicalPistonBlock(true)),
+//	MECHANICAL_PISTON_HEAD(MechanicalPistonHeadBlock::new, ComesWith.NO_BLOCKITEM),
+//	PISTON_POLE(PistonPoleBlock::new),
+//	MECHANICAL_BEARING(MechanicalBearingBlock::new),
+//	CLOCKWORK_BEARING(ClockworkBearingBlock::new),
+//	ROPE_PULLEY(PulleyBlock::new),
+//	ROPE(PulleyBlock.RopeBlock::new, ComesWith.NO_BLOCKITEM),
+//	PULLEY_MAGNET(PulleyBlock.MagnetBlock::new, ComesWith.NO_BLOCKITEM),
+//	CART_ASSEMBLER(CartAssemblerBlock::new, ITaggable.create()
+//			.withVanillaTags(ITaggable.BLOCK, "rails")),
+//	MINECART_ANCHOR(MinecartAnchorBlock::new, ComesWith.NO_BLOCKITEM),
+//	TRANSLATION_CHASSIS(LinearChassisBlock::new),
+//	TRANSLATION_CHASSIS_SECONDARY(LinearChassisBlock::new),
+//	ROTATION_CHASSIS(RadialChassisBlock::new),
+//	DRILL(DrillBlock::new),
+//	SAW(SawBlock::new),
+//	DEPLOYER(DeployerBlock::new),
+//	PORTABLE_STORAGE_INTERFACE(PortableStorageInterfaceBlock::new),
+//	HARVESTER(HarvesterBlock::new),
+//	PLOUGH(PloughBlock::new),
 
-	ANDESITE_CASING(() -> new CasingBlock(Properties.from(Blocks.ANDESITE))),
-	COPPER_CASING(() -> new CasingBlock(Properties.from(Blocks.ANDESITE))),
-	BRASS_CASING(() -> new CasingBlock(Properties.from(Blocks.ANDESITE))),
-	LAPIS_CASING(() -> new CasingBlock(Properties.from(Blocks.ANDESITE))),
+//	ANDESITE_CASING(() -> new CasingBlock(Properties.from(Blocks.ANDESITE))),
+//	COPPER_CASING(() -> new CasingBlock(Properties.from(Blocks.ANDESITE))),
+//	BRASS_CASING(() -> new CasingBlock(Properties.from(Blocks.ANDESITE))),
 
-	MECHANICAL_CRAFTER(MechanicalCrafterBlock::new),
-	SEQUENCED_GEARSHIFT(SequencedGearshiftBlock::new),
-	FLYWHEEL(FlywheelBlock::new),
-	FURNACE_ENGINE(FurnaceEngineBlock::new),
-	ROTATION_SPEED_CONTROLLER(SpeedControllerBlock::new),
+//	MECHANICAL_CRAFTER(MechanicalCrafterBlock::new),
+//	SEQUENCED_GEARSHIFT(SequencedGearshiftBlock::new),
+//	FLYWHEEL(FlywheelBlock::new),
+//	FURNACE_ENGINE(FurnaceEngineBlock::new),
+//	ROTATION_SPEED_CONTROLLER(SpeedControllerBlock::new),
 
 	_2_(Sections.LOGISTICS),
 
@@ -185,6 +139,7 @@ public enum AllBlocks implements NonNullSupplier<Block> {
 	VERTICAL_FUNNEL(FunnelBlock.Vertical::new, ComesWith.NO_BLOCKITEM),
 	BELT_TUNNEL(BeltTunnelBlock::new),
 	ENTITY_DETECTOR(BeltObserverBlock::new),
+	ANALOG_LEVER(AnalogLeverBlock::new),
 	PULSE_REPEATER(PulseRepeaterBlock::new),
 	FLEXPEATER(FlexpeaterBlock::new),
 	FLEXPULSEPEATER(FlexpeaterBlock::new),
@@ -209,9 +164,9 @@ public enum AllBlocks implements NonNullSupplier<Block> {
 
 	_4_(Sections.CURIOSITIES),
 
-	SYMMETRY_PLANE(PlaneSymmetryBlock::new, ComesWith.NO_BLOCKITEM),
-	SYMMETRY_CROSSPLANE(CrossPlaneSymmetryBlock::new, ComesWith.NO_BLOCKITEM),
-	SYMMETRY_TRIPLEPLANE(TriplePlaneSymmetryBlock::new, ComesWith.NO_BLOCKITEM),
+//	SYMMETRY_PLANE(PlaneSymmetryBlock::new, ComesWith.NO_BLOCKITEM),
+//	SYMMETRY_CROSSPLANE(CrossPlaneSymmetryBlock::new, ComesWith.NO_BLOCKITEM),
+//	SYMMETRY_TRIPLEPLANE(TriplePlaneSymmetryBlock::new, ComesWith.NO_BLOCKITEM),
 
 	_5_(Sections.SCHEMATICS),
 

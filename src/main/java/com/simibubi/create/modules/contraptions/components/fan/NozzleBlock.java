@@ -1,6 +1,6 @@
 package com.simibubi.create.modules.contraptions.components.fan;
 
-import com.simibubi.create.AllBlocks;
+import com.simibubi.create.AllBlocksNew;
 import com.simibubi.create.foundation.block.ProperDirectionalBlock;
 import com.simibubi.create.foundation.utility.AllShapes;
 import com.simibubi.create.modules.contraptions.IWrenchable;
@@ -21,8 +21,8 @@ import net.minecraft.world.World;
 
 public class NozzleBlock extends ProperDirectionalBlock implements IWrenchable {
 
-	public NozzleBlock() {
-		super(Properties.from(AllBlocks.ENCASED_FAN.get()));
+	public NozzleBlock(Properties p_i48415_1_) {
+		super(p_i48415_1_);
 	}
 
 	@Override
@@ -44,11 +44,6 @@ public class NozzleBlock extends ProperDirectionalBlock implements IWrenchable {
 	public BlockState getStateForPlacement(BlockItemUseContext context) {
 		return getDefaultState().with(FACING, context.getFace());
 	}
-	
-//	@Override // TODO 1.15 register layer
-//	public BlockRenderLayer getRenderLayer() {
-//		return BlockRenderLayer.CUTOUT_MIPPED;
-//	}
 	
 	@Override
 	public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
@@ -72,7 +67,7 @@ public class NozzleBlock extends ProperDirectionalBlock implements IWrenchable {
 	public boolean isValidPosition(BlockState state, IWorldReader worldIn, BlockPos pos) {
 		Direction towardsFan = state.get(FACING).getOpposite();
 		BlockState fanState = worldIn.getBlockState(pos.offset(towardsFan));
-		return AllBlocks.ENCASED_FAN.typeOf(fanState)
+		return AllBlocksNew.ENCASED_FAN.has(fanState)
 				&& fanState.get(EncasedFanBlock.FACING) == towardsFan.getOpposite();
 	}
 

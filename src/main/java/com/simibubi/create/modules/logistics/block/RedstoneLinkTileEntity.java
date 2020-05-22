@@ -26,7 +26,7 @@ public class RedstoneLinkTileEntity extends SmartTileEntity {
 	private boolean transmitter;
 
 	public RedstoneLinkTileEntity() {
-		super(AllTileEntities.REDSTONE_BRIDGE.type);
+		super(AllTileEntities.REDSTONE_LINK.type);
 	}
 
 	public RedstoneLinkTileEntity(boolean transmitter) {
@@ -101,7 +101,7 @@ public class RedstoneLinkTileEntity extends SmartTileEntity {
 		if (world.isRemote)
 			return;
 		BlockState blockState = getBlockState();
-		if (!AllBlocks.REDSTONE_BRIDGE.typeOf(blockState))
+		if (!AllBlocks.REDSTONE_LINK.has(blockState))
 			return;
 
 		if (receivedSignal != blockState.get(POWERED)) {

@@ -5,7 +5,6 @@ import java.util.Collections;
 import java.util.List;
 
 import com.simibubi.create.AllBlocks;
-import com.simibubi.create.AllBlocksNew;
 import com.simibubi.create.foundation.behaviour.base.TileEntityBehaviour;
 import com.simibubi.create.foundation.behaviour.filtering.FilteringBehaviour;
 import com.simibubi.create.foundation.block.ITE;
@@ -45,6 +44,10 @@ public class FunnelBlock extends AttachedLogisticalBlock
 
 	public static final BooleanProperty BELT = BooleanProperty.create("belt");
 	public static final MovementBehaviour MOVEMENT = new FunnelMovementBehaviour();
+
+	public FunnelBlock(Properties properties) {
+		super(properties);
+	}
 
 	@Override
 	protected void fillStateContainer(Builder<Block, BlockState> builder) {
@@ -86,12 +89,12 @@ public class FunnelBlock extends AttachedLogisticalBlock
 
 	@Override
 	protected BlockState getVerticalDefaultState() {
-		return AllBlocks.VERTICAL_FUNNEL.getDefault();
+		return AllBlocks.VERTICAL_FUNNEL.getDefaultState();
 	}
 
 	@Override
 	protected BlockState getHorizontalDefaultState() {
-		return AllBlocks.BELT_FUNNEL.getDefault();
+		return AllBlocks.FUNNEL.getDefaultState();
 	}
 
 	@Override
@@ -114,7 +117,7 @@ public class FunnelBlock extends AttachedLogisticalBlock
 	}
 
 	protected boolean isOnBelt(IWorld world, BlockPos pos) {
-		return AllBlocksNew.BELT.has(world.getBlockState(pos.down()));
+		return AllBlocks.BELT.has(world.getBlockState(pos.down()));
 	}
 
 	@Override
@@ -214,6 +217,10 @@ public class FunnelBlock extends AttachedLogisticalBlock
 	}
 
 	public static class Vertical extends FunnelBlock {
+		public Vertical(Properties properties) {
+			super(properties);
+		}
+
 		@Override
 		protected boolean isVertical() {
 			return true;

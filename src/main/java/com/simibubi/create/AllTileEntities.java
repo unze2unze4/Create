@@ -57,7 +57,7 @@ import com.simibubi.create.modules.contraptions.relays.advanced.SpeedControllerT
 import com.simibubi.create.modules.contraptions.relays.advanced.sequencer.SequencedGearshiftTileEntity;
 import com.simibubi.create.modules.contraptions.relays.belt.BeltTileEntity;
 import com.simibubi.create.modules.contraptions.relays.belt.BeltTileEntityRenderer;
-import com.simibubi.create.modules.contraptions.relays.elementary.ShaftTileEntity;
+import com.simibubi.create.modules.contraptions.relays.elementary.SimpleKineticTileEntity;
 import com.simibubi.create.modules.contraptions.relays.encased.AdjustablePulleyTileEntity;
 import com.simibubi.create.modules.contraptions.relays.encased.ClutchTileEntity;
 import com.simibubi.create.modules.contraptions.relays.encased.EncasedShaftTileEntity;
@@ -71,19 +71,19 @@ import com.simibubi.create.modules.contraptions.relays.gearbox.GearboxTileEntity
 import com.simibubi.create.modules.contraptions.relays.gearbox.GearboxTileEntityRenderer;
 import com.simibubi.create.modules.contraptions.relays.gearbox.GearshiftTileEntity;
 import com.simibubi.create.modules.logistics.block.RedstoneLinkTileEntity;
-import com.simibubi.create.modules.logistics.block.StockswitchTileEntity;
+import com.simibubi.create.modules.logistics.block.StockpileSwitchTileEntity;
 import com.simibubi.create.modules.logistics.block.belts.observer.BeltObserverTileEntity;
 import com.simibubi.create.modules.logistics.block.belts.observer.BeltObserverTileEntityRenderer;
 import com.simibubi.create.modules.logistics.block.belts.tunnel.BeltTunnelTileEntity;
 import com.simibubi.create.modules.logistics.block.belts.tunnel.BeltTunnelTileEntityRenderer;
-import com.simibubi.create.modules.logistics.block.diodes.FlexPulsepeaterTileEntity;
-import com.simibubi.create.modules.logistics.block.diodes.FlexpeaterTileEntity;
-import com.simibubi.create.modules.logistics.block.diodes.FlexpeaterTileEntityRenderer;
+import com.simibubi.create.modules.logistics.block.diodes.AdjustablePulseRepeaterTileEntity;
+import com.simibubi.create.modules.logistics.block.diodes.AdjustableRepeaterRenderer;
+import com.simibubi.create.modules.logistics.block.diodes.AdjustableRepeaterTileEntity;
 import com.simibubi.create.modules.logistics.block.extractor.ExtractorTileEntity;
 import com.simibubi.create.modules.logistics.block.extractor.LinkedExtractorTileEntity;
 import com.simibubi.create.modules.logistics.block.funnel.FunnelTileEntity;
+import com.simibubi.create.modules.logistics.block.inventories.AdjustableCrateTileEntity;
 import com.simibubi.create.modules.logistics.block.inventories.CreativeCrateTileEntity;
-import com.simibubi.create.modules.logistics.block.inventories.FlexcrateTileEntity;
 import com.simibubi.create.modules.logistics.block.transposer.LinkedTransposerTileEntity;
 import com.simibubi.create.modules.logistics.block.transposer.TransposerTileEntity;
 import com.simibubi.create.modules.schematics.block.SchematicTableTileEntity;
@@ -104,69 +104,70 @@ import net.minecraftforge.fml.client.registry.ClientRegistry;
 public enum AllTileEntities {
 
 	// Schematics
-	SCHEMATICANNON(SchematicannonTileEntity::new, AllBlocksNew.SCHEMATICANNON),
-	SCHEMATICTABLE(SchematicTableTileEntity::new, AllBlocksNew.SCHEMATIC_TABLE),
+	SCHEMATICANNON(SchematicannonTileEntity::new, AllBlocks.SCHEMATICANNON),
+	SCHEMATIC_TABLE(SchematicTableTileEntity::new, AllBlocks.SCHEMATIC_TABLE),
 
 	// Kinetics
-	SHAFT(ShaftTileEntity::new, AllBlocksNew.SHAFT, AllBlocksNew.COGWHEEL, AllBlocksNew.LARGE_COGWHEEL,
-		AllBlocksNew.ENCASED_SHAFT),
-	MOTOR(MotorTileEntity::new, AllBlocksNew.CREATIVE_MOTOR),
-	GEARBOX(GearboxTileEntity::new, AllBlocksNew.GEARBOX),
-	ENCASED_SHAFT(EncasedShaftTileEntity::new, AllBlocksNew.ENCASED_SHAFT, AllBlocksNew.ENCASED_BELT),
-	ADJUSTABLE_PULLEY(AdjustablePulleyTileEntity::new, AllBlocksNew.ADJUSTABLE_PULLEY),
-	ENCASED_FAN(EncasedFanTileEntity::new, AllBlocksNew.ENCASED_FAN),
-	NOZZLE(NozzleTileEntity::new, AllBlocksNew.NOZZLE),
-	CLUTCH(ClutchTileEntity::new, AllBlocksNew.CLUTCH),
-	GEARSHIFT(GearshiftTileEntity::new, AllBlocksNew.GEARSHIFT),
-	TURNTABLE(TurntableTileEntity::new, AllBlocksNew.TURNTABLE),
-	HAND_CRANK(HandCrankTileEntity::new, AllBlocksNew.HAND_CRANK),
-	CUCKOO_CLOCK(CuckooClockTileEntity::new, AllBlocksNew.CUCKOO_CLOCK, AllBlocksNew.MYSTERIOUS_CUCKOO_CLOCK),
+	SIMPLE_KINETIC(SimpleKineticTileEntity::new, AllBlocks.SHAFT, AllBlocks.COGWHEEL, AllBlocks.LARGE_COGWHEEL,
+		AllBlocks.ENCASED_SHAFT),
+	MOTOR(MotorTileEntity::new, AllBlocks.CREATIVE_MOTOR),
+	GEARBOX(GearboxTileEntity::new, AllBlocks.GEARBOX),
+	ENCASED_SHAFT(EncasedShaftTileEntity::new, AllBlocks.ENCASED_SHAFT, AllBlocks.ENCASED_BELT),
+	ADJUSTABLE_PULLEY(AdjustablePulleyTileEntity::new, AllBlocks.ADJUSTABLE_PULLEY),
+	ENCASED_FAN(EncasedFanTileEntity::new, AllBlocks.ENCASED_FAN),
+	NOZZLE(NozzleTileEntity::new, AllBlocks.NOZZLE),
+	CLUTCH(ClutchTileEntity::new, AllBlocks.CLUTCH),
+	GEARSHIFT(GearshiftTileEntity::new, AllBlocks.GEARSHIFT),
+	TURNTABLE(TurntableTileEntity::new, AllBlocks.TURNTABLE),
+	HAND_CRANK(HandCrankTileEntity::new, AllBlocks.HAND_CRANK),
+	CUCKOO_CLOCK(CuckooClockTileEntity::new, AllBlocks.CUCKOO_CLOCK, AllBlocks.MYSTERIOUS_CUCKOO_CLOCK),
 
-	BELT(BeltTileEntity::new, AllBlocksNew.BELT),
+	BELT(BeltTileEntity::new, AllBlocks.BELT),
 	BELT_TUNNEL(BeltTunnelTileEntity::new, AllBlocks.BELT_TUNNEL),
-	MECHANICAL_PISTON(MechanicalPistonTileEntity::new, AllBlocksNew.MECHANICAL_PISTON,
-		AllBlocksNew.STICKY_MECHANICAL_PISTON),
-	MECHANICAL_BEARING(MechanicalBearingTileEntity::new, AllBlocksNew.MECHANICAL_BEARING),
-	CLOCKWORK_BEARING(ClockworkBearingTileEntity::new, AllBlocksNew.CLOCKWORK_BEARING),
-	ROPE_PULLEY(PulleyTileEntity::new, AllBlocksNew.ROPE_PULLEY),
-	CHASSIS(ChassisTileEntity::new, AllBlocksNew.RADIAL_CHASSIS, AllBlocksNew.LINEAR_CHASSIS,
-		AllBlocksNew.LINEAR_CHASSIS_SECONDARY),
-	DRILL(DrillTileEntity::new, AllBlocksNew.DRILL),
-	SAW(SawTileEntity::new, AllBlocksNew.SAW),
-	HARVESTER(HarvesterTileEntity::new, AllBlocksNew.HARVESTER),
-	FLYWHEEL(FlywheelTileEntity::new, AllBlocksNew.FLYWHEEL),
-	FURNACE_ENGINE(FurnaceEngineTileEntity::new, AllBlocksNew.FURNACE_ENGINE),
+	MECHANICAL_PISTON(MechanicalPistonTileEntity::new, AllBlocks.MECHANICAL_PISTON,
+		AllBlocks.STICKY_MECHANICAL_PISTON),
+	MECHANICAL_BEARING(MechanicalBearingTileEntity::new, AllBlocks.MECHANICAL_BEARING),
+	CLOCKWORK_BEARING(ClockworkBearingTileEntity::new, AllBlocks.CLOCKWORK_BEARING),
+	ROPE_PULLEY(PulleyTileEntity::new, AllBlocks.ROPE_PULLEY),
+	CHASSIS(ChassisTileEntity::new, AllBlocks.RADIAL_CHASSIS, AllBlocks.LINEAR_CHASSIS,
+		AllBlocks.LINEAR_CHASSIS_SECONDARY),
+	DRILL(DrillTileEntity::new, AllBlocks.DRILL),
+	SAW(SawTileEntity::new, AllBlocks.SAW),
+	HARVESTER(HarvesterTileEntity::new, AllBlocks.HARVESTER),
+	FLYWHEEL(FlywheelTileEntity::new, AllBlocks.FLYWHEEL),
+	FURNACE_ENGINE(FurnaceEngineTileEntity::new, AllBlocks.FURNACE_ENGINE),
 
-	MILLSTONE(MillstoneTileEntity::new, AllBlocksNew.MILLSTONE),
-	CRUSHING_WHEEL(CrushingWheelTileEntity::new, AllBlocksNew.CRUSHING_WHEEL),
-	CRUSHING_WHEEL_CONTROLLER(CrushingWheelControllerTileEntity::new, AllBlocksNew.CRUSHING_WHEEL_CONTROLLER),
-	WATER_WHEEL(WaterWheelTileEntity::new, AllBlocksNew.WATER_WHEEL),
-	MECHANICAL_PRESS(MechanicalPressTileEntity::new, AllBlocksNew.MECHANICAL_PRESS),
-	MECHANICAL_MIXER(MechanicalMixerTileEntity::new, AllBlocksNew.MECHANICAL_MIXER),
-	DEPLOYER(DeployerTileEntity::new, AllBlocksNew.DEPLOYER),
-	BASIN(BasinTileEntity::new, AllBlocksNew.BASIN),
-	MECHANICAL_CRAFTER(MechanicalCrafterTileEntity::new, AllBlocksNew.MECHANICAL_CRAFTER),
-	SEQUENCED_GEARSHIFT(SequencedGearshiftTileEntity::new, AllBlocksNew.SEQUENCED_GEARSHIFT),
-	ROTATION_SPEED_CONTROLLER(SpeedControllerTileEntity::new, AllBlocksNew.ROTATION_SPEED_CONTROLLER),
-	SPEED_GAUGE(SpeedGaugeTileEntity::new, AllBlocksNew.SPEEDOMETER),
-	STRESS_GAUGE(StressGaugeTileEntity::new, AllBlocksNew.STRESSOMETER),
+	MILLSTONE(MillstoneTileEntity::new, AllBlocks.MILLSTONE),
+	CRUSHING_WHEEL(CrushingWheelTileEntity::new, AllBlocks.CRUSHING_WHEEL),
+	CRUSHING_WHEEL_CONTROLLER(CrushingWheelControllerTileEntity::new, AllBlocks.CRUSHING_WHEEL_CONTROLLER),
+	WATER_WHEEL(WaterWheelTileEntity::new, AllBlocks.WATER_WHEEL),
+	MECHANICAL_PRESS(MechanicalPressTileEntity::new, AllBlocks.MECHANICAL_PRESS),
+	MECHANICAL_MIXER(MechanicalMixerTileEntity::new, AllBlocks.MECHANICAL_MIXER),
+	DEPLOYER(DeployerTileEntity::new, AllBlocks.DEPLOYER),
+	BASIN(BasinTileEntity::new, AllBlocks.BASIN),
+	MECHANICAL_CRAFTER(MechanicalCrafterTileEntity::new, AllBlocks.MECHANICAL_CRAFTER),
+	SEQUENCED_GEARSHIFT(SequencedGearshiftTileEntity::new, AllBlocks.SEQUENCED_GEARSHIFT),
+	ROTATION_SPEED_CONTROLLER(SpeedControllerTileEntity::new, AllBlocks.ROTATION_SPEED_CONTROLLER),
+	SPEEDOMETER(SpeedGaugeTileEntity::new, AllBlocks.SPEEDOMETER),
+	STRESSOMETER(StressGaugeTileEntity::new, AllBlocks.STRESSOMETER),
 	ANALOG_LEVER(AnalogLeverTileEntity::new, AllBlocks.ANALOG_LEVER),
-	CART_ASSEMBLER(CartAssemblerTileEntity::new, AllBlocksNew.CART_ASSEMBLER),
+	CART_ASSEMBLER(CartAssemblerTileEntity::new, AllBlocks.CART_ASSEMBLER),
 
 	// Logistics
-	REDSTONE_BRIDGE(RedstoneLinkTileEntity::new, AllBlocks.REDSTONE_BRIDGE),
-	STOCKSWITCH(StockswitchTileEntity::new, AllBlocks.STOCKSWITCH),
-	FLEXCRATE(FlexcrateTileEntity::new, AllBlocks.FLEXCRATE),
+	REDSTONE_LINK(RedstoneLinkTileEntity::new, AllBlocks.REDSTONE_LINK),
+	STOCKPILE_SWITCH(StockpileSwitchTileEntity::new, AllBlocks.STOCKPILE_SWITCH),
+	ADJUSTABLE_CRATE(AdjustableCrateTileEntity::new, AllBlocks.ADJUSTABLE_CRATE),
 	CREATIVE_CRATE(CreativeCrateTileEntity::new, AllBlocks.CREATIVE_CRATE),
 	EXTRACTOR(ExtractorTileEntity::new, AllBlocks.EXTRACTOR, AllBlocks.VERTICAL_EXTRACTOR),
-	LINKED_EXTRACTOR(LinkedExtractorTileEntity::new, AllBlocks.LINKED_EXTRACTOR, AllBlocks.VERTICAL_LINKED_EXTRACTOR),
+	LINKED_EXTRACTOR(LinkedExtractorTileEntity::new, AllBlocks.LINKED_EXTRACTOR,
+		AllBlocks.VERTICAL_LINKED_EXTRACTOR),
 	TRANSPOSER(TransposerTileEntity::new, AllBlocks.TRANSPOSER, AllBlocks.VERTICAL_TRANSPOSER),
 	LINKED_TRANSPOSER(LinkedTransposerTileEntity::new, AllBlocks.LINKED_TRANSPOSER,
 		AllBlocks.VERTICAL_LINKED_TRANSPOSER),
-	BELT_FUNNEL(FunnelTileEntity::new, AllBlocks.BELT_FUNNEL, AllBlocks.VERTICAL_FUNNEL),
-	ENTITY_DETECTOR(BeltObserverTileEntity::new, AllBlocks.ENTITY_DETECTOR),
-	FLEXPEATER(FlexpeaterTileEntity::new, AllBlocks.FLEXPEATER),
-	FLEXPULSEPEATER(FlexPulsepeaterTileEntity::new, AllBlocks.FLEXPULSEPEATER),
+	FUNNEL(FunnelTileEntity::new, AllBlocks.FUNNEL, AllBlocks.VERTICAL_FUNNEL),
+	BELT_OBSERVER(BeltObserverTileEntity::new, AllBlocks.BELT_OBSERVER),
+	ADJUSTABLE_REPEATER(AdjustableRepeaterTileEntity::new, AllBlocks.ADJUSTABLE_REPEATER),
+	ADJUSTABLE_PULSE_REPEATER(AdjustablePulseRepeaterTileEntity::new, AllBlocks.ADJUSTABLE_PULSE_REPEATER),
 
 	;
 
@@ -204,7 +205,7 @@ public enum AllTileEntities {
 	public static void registerRenderers() {
 		bind(SCHEMATICANNON, SchematicannonRenderer::new);
 
-		bind(SHAFT, KineticTileEntityRenderer::new);
+		bind(SIMPLE_KINETIC, KineticTileEntityRenderer::new);
 		bind(TURNTABLE, KineticTileEntityRenderer::new);
 		bind(MOTOR, MotorTileEntityRenderer::new);
 		bind(ENCASED_SHAFT, EncasedShaftTileEntityRenderer::new);
@@ -233,8 +234,8 @@ public enum AllTileEntities {
 		bind(MECHANICAL_PRESS, MechanicalPressTileEntityRenderer::new);
 		bind(MECHANICAL_MIXER, MechanicalMixerTileEntityRenderer::new);
 		bind(MECHANICAL_CRAFTER, MechanicalCrafterTileEntityRenderer::new);
-		bind(SPEED_GAUGE, disp -> new GaugeTileEntityRenderer(disp, GaugeBlock.Type.SPEED));
-		bind(STRESS_GAUGE, disp -> new GaugeTileEntityRenderer(disp, GaugeBlock.Type.STRESS));
+		bind(SPEEDOMETER, disp -> new GaugeTileEntityRenderer(disp, GaugeBlock.Type.SPEED));
+		bind(STRESSOMETER, disp -> new GaugeTileEntityRenderer(disp, GaugeBlock.Type.STRESS));
 		bind(BASIN, BasinTileEntityRenderer::new);
 		bind(DEPLOYER, DeployerTileEntityRenderer::new);
 		bind(FLYWHEEL, FlywheelRenderer::new);
@@ -242,15 +243,16 @@ public enum AllTileEntities {
 		bind(ROTATION_SPEED_CONTROLLER, SpeedControllerRenderer::new);
 
 		bind(CREATIVE_CRATE, SmartTileEntityRenderer::new);
-		bind(REDSTONE_BRIDGE, SmartTileEntityRenderer::new);
+		bind(REDSTONE_LINK, SmartTileEntityRenderer::new);
 		bind(EXTRACTOR, SmartTileEntityRenderer::new);
 		bind(LINKED_EXTRACTOR, SmartTileEntityRenderer::new);
 		bind(TRANSPOSER, SmartTileEntityRenderer::new);
 		bind(LINKED_TRANSPOSER, SmartTileEntityRenderer::new);
-		bind(BELT_FUNNEL, SmartTileEntityRenderer::new);
+		bind(FUNNEL, SmartTileEntityRenderer::new);
 		bind(BELT_TUNNEL, BeltTunnelTileEntityRenderer::new);
-		bind(ENTITY_DETECTOR, BeltObserverTileEntityRenderer::new);
-		bind(FLEXPEATER, FlexpeaterTileEntityRenderer::new);
+		bind(BELT_OBSERVER, BeltObserverTileEntityRenderer::new);
+		bind(ADJUSTABLE_REPEATER, AdjustableRepeaterRenderer::new);
+		bind(ADJUSTABLE_PULSE_REPEATER, AdjustableRepeaterRenderer::new);
 	}
 
 	@SuppressWarnings("unchecked") // TODO 1.15 this generic stuff is incompatible with the enum system - need

@@ -1,13 +1,12 @@
 package com.simibubi.create.modules.logistics.block;
 
-import com.simibubi.create.AllBlocksNew;
+import com.simibubi.create.AllBlocks;
 import com.simibubi.create.modules.contraptions.IWrenchable;
 import com.simibubi.create.modules.contraptions.relays.belt.BeltBlock;
 import com.simibubi.create.modules.logistics.block.transposer.TransposerBlock;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
 import net.minecraft.block.HorizontalBlock;
 import net.minecraft.block.material.PushReaction;
 import net.minecraft.entity.player.PlayerEntity;
@@ -29,8 +28,8 @@ public abstract class AttachedLogisticalBlock extends HorizontalBlock implements
 
 	public static final BooleanProperty UPWARD = BooleanProperty.create("upward");
 
-	public AttachedLogisticalBlock() {
-		super(Properties.from(Blocks.ANDESITE));
+	public AttachedLogisticalBlock(Properties properties) {
+		super(properties);
 	}
 
 	@Override
@@ -86,7 +85,7 @@ public abstract class AttachedLogisticalBlock extends HorizontalBlock implements
 
 		if (neighbour.getBlock() instanceof TransposerBlock)
 			return false;
-		if (AllBlocksNew.BELT.has(neighbour))
+		if (AllBlocks.BELT.has(neighbour))
 			return BeltBlock.canAccessFromSide(facing, neighbour);
 		return !neighbour.getShape(worldIn, pos).isEmpty();
 	}

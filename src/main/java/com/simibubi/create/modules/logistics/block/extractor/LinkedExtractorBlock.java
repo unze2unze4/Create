@@ -15,19 +15,18 @@ import net.minecraft.world.IBlockReader;
 
 public class LinkedExtractorBlock extends ExtractorBlock {
 
-//	@Override // TODO 1.15 register layer
-//	public BlockRenderLayer getRenderLayer() {
-//		return BlockRenderLayer.CUTOUT_MIPPED;
-//	}
+	public LinkedExtractorBlock(Properties properties) {
+		super(properties);
+	}
 
 	@Override
 	protected BlockState getVerticalDefaultState() {
-		return AllBlocks.VERTICAL_LINKED_EXTRACTOR.get().getDefaultState();
+		return AllBlocks.VERTICAL_LINKED_EXTRACTOR.getDefaultState();
 	}
 
 	@Override
 	protected BlockState getHorizontalDefaultState() {
-		return AllBlocks.LINKED_EXTRACTOR.get().getDefaultState();
+		return AllBlocks.LINKED_EXTRACTOR.getDefaultState();
 	}
 	
 	@Override
@@ -75,6 +74,10 @@ public class LinkedExtractorBlock extends ExtractorBlock {
 	}
 
 	public static class Vertical extends LinkedExtractorBlock {
+		public Vertical(Properties properties) {
+			super(properties);
+		}
+
 		@Override
 		protected boolean isVertical() {
 			return true;

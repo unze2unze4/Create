@@ -56,9 +56,8 @@ public class Create {
 
 		MinecraftForge.EVENT_BUS.addListener(Create::serverStarting);
 
-		AllBlocksNew.register();
-		AllPaletteBlocks.register();
 		AllBlocks.register();
+		AllPaletteBlocks.register();
 //		modEventBus.addGenericListener(Block.class, AllBlocks::register);
 		modEventBus.addGenericListener(Item.class, AllItems::register);
 		modEventBus.addGenericListener(IRecipeSerializer.class, AllRecipes::register);

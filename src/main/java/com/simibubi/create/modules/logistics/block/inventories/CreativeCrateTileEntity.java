@@ -58,7 +58,7 @@ public class CreativeCrateTileEntity extends CrateTileEntity {
 	}
 
 	private CreativeCrateTileEntity getOtherCrate() {
-		if (!AllBlocks.CREATIVE_CRATE.typeOf(getBlockState()))
+		if (!AllBlocks.CREATIVE_CRATE.has(getBlockState()))
 			return null;
 		TileEntity tileEntity = world.getTileEntity(pos.offset(getFacing()));
 		if (tileEntity instanceof CreativeCrateTileEntity)

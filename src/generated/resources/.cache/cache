@@ -277,11 +277,7 @@ e8b0a401c10d1ba67ed71ba31bd5f9bc28571b65 assets\create\blockstates\powered_toggl
 c29213b77ac0c78d8979c5f6188d2b265696f9b9 assets\create\blockstates\redstone_link.json
 e2990fe70ad5d10437a376e70e167d1856277cc1 assets\create\blockstates\rope.json
 e14d5f7252105934295b4e156ec0e6d62d3d6b1c assets\create\blockstates\rope_pulley.json
-<<<<<<< HEAD
 df632e786bbacad2fd992782f08dcb1ef0ad2214 assets\create\blockstates\rotation_chassis.json
-=======
-e069278f8fb93cd4bb6afab3848e6f1560a04303 assets\create\blockstates\rotation_chassis.json
->>>>>>> upstream/mc1.15/dev
 cc4cf3420fa290cb844f9cf4dfdd836aa9b70500 assets\create\blockstates\rotation_speed_controller.json
 56b63575c87065bc82eb9410175c501cdf959c66 assets\create\blockstates\saw.json
 36592a6542332b35445931e8e9531adf786b63ba assets\create\blockstates\schematicannon.json
@@ -330,13 +326,8 @@ c60c3115fd6eeaa3a696428a87a74d184ab7d62d assets\create\blockstates\weathered_lim
 7e2476ffff93d0eedee5314e5692fcbf5692bffc assets\create\blockstates\weathered_limestone_pillar.json
 7f39521b211441f5c3e06d60c5978cebe16cacfb assets\create\blockstates\zinc_block.json
 b7181bcd8182b2f17088e5aa881f374c9c65470c assets\create\blockstates\zinc_ore.json
-<<<<<<< HEAD
-b4b4be5ecdb0cd125e4e996f98f3d2862ec1d729 assets\create\lang\en_ud.json
-bf18434f69f666e1afc97a46dd9af75cb6fe19aa assets\create\lang\en_us.json
-=======
-efa942851f247891194d2c6ecdd8724a23b05aa0 assets\create\lang\en_ud.json
-f2331719165149b6b3c90ca97f230a0138d20612 assets\create\lang\en_us.json
->>>>>>> upstream/mc1.15/dev
+13ee74b87a331482181d604307beabac7b80f2dd assets\create\lang\en_ud.json
+82418380067b3f011424b59927f2e6c0c1c1b62c assets\create\lang\en_us.json
 846200eb548d3bfa2e77b41039de159b4b6cfb45 assets\create\models\block\acacia_window.json
 1930fa3a3c98d53dd19e4ee7f55bc27fd47aa281 assets\create\models\block\acacia_window_pane_noside.json
 1763ea2c9b981d187f5031ba608f3d5d3be3986a assets\create\models\block\acacia_window_pane_noside_alt.json
@@ -1352,7 +1343,7 @@ a99446c05e1896f3a280e17b47ec4d4b0e81987d data\create\loot_tables\blocks\drill.js
 503a93787537b46f462d32b0382c3396f42bb1f6 data\create\loot_tables\blocks\encased_belt.json
 9055d82b983b673e1638d17b712b9fcd1f5a52e6 data\create\loot_tables\blocks\encased_fan.json
 b3849bece65e13128fdeb033b156cf6615bc72f8 data\create\loot_tables\blocks\encased_shaft.json
-205f5899101262f31f5c1a88bb7d954918d08d04 data\create\loot_tables\blocks\extractor.json
+5a47c1535c866184b4ffca65763f5676f319e0aa data\create\loot_tables\blocks\extractor.json
 ddfc4764a6039d771e03af815ac4493da80d2e6b data\create\loot_tables\blocks\fancy_andesite_bricks.json
 31f2e6932505c68b28e92221a37144f69161c376 data\create\loot_tables\blocks\fancy_andesite_bricks_slab.json
 413c8bb80954679796cd9d18f808c28a7bdbe681 data\create\loot_tables\blocks\fancy_andesite_bricks_stairs.json
@@ -1392,7 +1383,7 @@ e4d0fe35d3441a5815bd4e1357329b284e63ecd8 data\create\loot_tables\blocks\fancy_we
 f37526c092c645045c22674dea6c7b1ec503c9c3 data\create\loot_tables\blocks\flywheel.json
 8fbd865f350c615031ec3f56eb98b51ce3008de3 data\create\loot_tables\blocks\framed_glass.json
 44c8bc7271fa367ff052bef242e1ae26fb435175 data\create\loot_tables\blocks\framed_glass_pane.json
-205f5899101262f31f5c1a88bb7d954918d08d04 data\create\loot_tables\blocks\funnel.json
+ed895ef7dcb97ad9b00d80a4fa9c331229dd532e data\create\loot_tables\blocks\funnel.json
 4063880eda871fe63a4eb549a19daecabce849e5 data\create\loot_tables\blocks\furnace_engine.json
 1070cba1c0f46cf7ebe31089f35333f5eadda6e4 data\create\loot_tables\blocks\gabbro.json
 0356e003d8890d31b89d0ad98e32aae892da71f9 data\create\loot_tables\blocks\gabbro_bricks.json
@@ -1442,7 +1433,7 @@ cb315814960850b5080598b89ee94c833b5048f7 data\create\loot_tables\blocks\limeston
 8db1e3f0dac48b91a4839206a7d5a88cef415fdc data\create\loot_tables\blocks\limestone_cobblestone_stairs.json
 92fb16606f289ad33860270d098fad2522b24e09 data\create\loot_tables\blocks\limestone_cobblestone_wall.json
 371115e5ceb08c07a9ab2371509960c31e0baa8a data\create\loot_tables\blocks\limestone_pillar.json
-dac789cf53b00eed34308848b5e267b7ccec090c data\create\loot_tables\blocks\linked_extractor.json
+205f5899101262f31f5c1a88bb7d954918d08d04 data\create\loot_tables\blocks\linked_extractor.json
 205f5899101262f31f5c1a88bb7d954918d08d04 data\create\loot_tables\blocks\linked_transposer.json
 90ddf7b5c3b61758a4ad12a1e6ef16fe6ebf7794 data\create\loot_tables\blocks\mechanical_bearing.json
 e93872a90e4f4642a003539e7db28fdacfdcd114 data\create\loot_tables\blocks\mechanical_crafter.json
@@ -1577,7 +1568,7 @@ ec2889e712702644092197a4b41a682fb953817d data\create\loot_tables\blocks\stockpil
 2082f3fb39185cb65555ab93178081a2f53f6046 data\create\loot_tables\blocks\tiled_glass_pane.json
 d95e09420ef7580779c71888d043aa5b4c56c725 data\create\loot_tables\blocks\translation_chassis.json
 7c70f942b2ffb58a3fb894e57ce4e445b9007be2 data\create\loot_tables\blocks\translation_chassis_secondary.json
-205f5899101262f31f5c1a88bb7d954918d08d04 data\create\loot_tables\blocks\transposer.json
+b201436ae6d2ad5a7d47dca0ee8c7016b4c28fa5 data\create\loot_tables\blocks\transposer.json
 7b66ad2c48449bafd0cdbd086ac41218cb73a814 data\create\loot_tables\blocks\turntable.json
 eb3086010565ff1e83e30aa3712f82819bcc0e99 data\create\loot_tables\blocks\vertical_framed_glass.json
 15019b1b2b77e6be8a0f4ccd20f35ebb4a82a090 data\create\loot_tables\blocks\vertical_framed_glass_pane.json
